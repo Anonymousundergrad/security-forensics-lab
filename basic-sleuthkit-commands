@@ -1,0 +1,39 @@
+df
+//The df command displays information about total space and available space on a file system.
+
+sudo dd if=/ddev/sdb1 of=~/image.img
+//dd command is used to convert and copy files according to the operands.
+It performs operations like:
+i)	copying from one hard disk to another hard disk
+ii)	creating image file of a hard disk
+iii)	restoring a hard disk from the image file
+
+sudo fsstat image.img
+//fsstat displays the details associated with a file system. It displays the
+type of file system, range of meta data values, content units, FAT table in
+condensed form etc.
+
+fls image.img
+//fls command is used to recover or display information about the files
+and directories in a given image or file system. It can also display file
+names of recently deleted files for the directory using the given inode.
+
+ffind image.img 11532
+//Finds the name of the file or directory using a given inode.
+
+istat image.img 11532
+//Display details of a meta-data structure (i.e., inode). It gives information
+such as the size of the file, last access time, modified time etc.
+
+ils -a image.img
+//Lists information of inode.
+
+blkstat image.img 126534
+//It is used to display information about a specific block in a disk image.
+
+md5sum
+//md5sum is used to verify data integrity using MD5. MD5 is 128-bit
+cryptographic hash and is used to verify file authenticity and integrity.
+Each time an edit is made in the file, it generates a new hash value. This
+is shown in the below attached screenshot, where on editing the
+input.txt file a new hash value is given as output.
